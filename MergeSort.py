@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 def merge(a, l, m, r):
     #create Left and Right array\
@@ -35,8 +36,11 @@ def Merge_Sort(a, l, r):
         Merge_Sort(a, mid+1, r)
         merge(a, l, mid, r)
 
+n = 5000
+a = np.random.randint(500000, size = n)
 
-a = np.random.randint(1000, size = 20)
-n = len(a)
+
+start_time = time.time()
 Merge_Sort(a, 0, n-1)
-print(*a)
+print(a)
+print("--- sorting cost %s seconds ---" % (time.time() - start_time))

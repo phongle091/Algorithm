@@ -1,7 +1,6 @@
 import numpy as np
+import time
 
-a = np.random.randint(100,size=30)
-n = len(a)
 def SelectionSort(a, n):
     
     for i in range(n-1):
@@ -12,9 +11,16 @@ def SelectionSort(a, n):
                 index = j
 
         if (i != index):
-            temp = a[i]
-            a[i] = a[index]
-            a[index] = temp
+            (a[i], a[index]) = (a[index], a[i])
     return a
+
+n = 50000
+a = np.random.randint(500000,size=n)
+
+
+start_time = time.time()
+
 a = SelectionSort(a,n)
-print(*a)
+print(a)
+
+print("--- sorting cost %s seconds ---" % (time.time() - start_time))

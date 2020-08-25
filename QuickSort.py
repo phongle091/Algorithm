@@ -1,8 +1,8 @@
 import numpy as np
-
+import time
 def quickSort(a, l, r):
     n =int((l+r)/2)
-    pivot = a[l]
+    pivot = a[n]
     i = l
     j = r
     while (i < j):
@@ -19,7 +19,10 @@ def quickSort(a, l, r):
     if (l < j):
         quickSort(a, l, j)
 
-n = 5
-a = np.random.randint(50, size = n)
+n = 50000
+a = np.random.randint(50000, size = n)
+
+start_time = time.time()
 quickSort(a, 0, n-1)
-print(*a)
+print(a)
+print("--- sorting cost: %s seconds ---" % (time.time() - start_time))
