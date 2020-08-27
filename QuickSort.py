@@ -14,14 +14,21 @@ def quickSort(a, l, r):
             (a[i], a[j]) = (a[j], a[i])
             i += 1
             j -= 1    
-    if (i < r):
-        quickSort(a, i, r)
+        print(a)
     if (l < j):
-        quickSort(a, l, j)
+        print("2")
+        quickSort(a, l, j)    
+    if (i < r):
+        print("1")
+        quickSort(a, i, r)
+        
+   
+        
 
-n = 50000
-a = np.random.randint(50000, size = n)
-
+# n = 
+# a = np.random.randint(50, size = n)
+a = [6, 8, 3, 1, 5, 2, 1, 4]
+n = len(a)
 start_time = time.time()
 quickSort(a, 0, n-1)
 print(a)

@@ -1,6 +1,6 @@
 import numpy as np
-n = 100
-a = np.random.randint(1000, size = n)
+import time
+
 
 def insertionSort(a, n):
     for i in range(n):
@@ -12,5 +12,10 @@ def insertionSort(a, n):
         a[index] = value
     return a
 
+n = 50000
+a = np.random.randint(500000, size = n)    
+
+start_time = time.time()
 insertionSort(a, n)
-print(*a)
+print(a)
+print("--- sorting cost %s seconds ---" % (time.time() - start_time))

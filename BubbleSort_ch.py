@@ -11,8 +11,9 @@ def BubbleSort(a):
             # else: continue
     return a
 
-n = 50000
-a = np.random.randint(500000, size = n)
+
+n = 5000
+a = np.random.randint(500000, size=n)
 start_time = time.time()
 a = BubbleSort(a)
 print(a)
